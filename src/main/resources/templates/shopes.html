@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <a>Клиенты</a>
+    <a href="client">Товар</a>
+    <hr>
+    <a href="add-shop">Добавить новый товар</a>
+    <br>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>Товар</th>
+            <th>Стоимость</th>
+            <th>Дата поступления</th>
+            <th>Наличее на складе</th>
+            <th>Редактирование</th>
+            <th>Удаление</th>
+        </tr>
+        <tr th:each="shop : ${shopes}">
+            <td th:text="${shop.id}"></td>
+            <td th:text="${shop.product}"></td>
+            <td th:text="${shop.price}"></td>
+            <td th:text="${shop.receiptDate}"></td>
+            <td th:text="${shop.stock}"></td>
+            <td>
+                <a th:href="@{update-shop(id=${shop.id})}">Редактировать</a>
+            </td>
+            <td>
+                <a class="text-danger" th:href="@{delete-shop(id=${shop.id})}">Удалить</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
