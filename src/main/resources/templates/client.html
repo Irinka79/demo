@@ -22,13 +22,13 @@
       <th>Редактирование</th>
       <th>Удаление</th>
     </tr>
-    <tr th:each="buyer : ${client}">
+    <tr th:each="buyers : ${client}">
       <td th:text="${buyers.id}"></td>
       <td th:text="${buyers.client}"></td>
       <td th:text="${buyers.phoneNumber}"></td>
-      <td th:text="${buyers.shop.client}"></td>
+      <td th:text="${buyers.shop.product}"></td>
       <td>
-        <a th:href="@{update-buyers(id=${buyer.id})}">Редактировать</a>
+        <a th:href="@{update-buyers(id=${buyers.id})}">Редактировать</a>
       </td>
       <td>
         <a class="text-danger" th:href="@{delete-buyers(id=${buyers.id})}">Удалить</a>

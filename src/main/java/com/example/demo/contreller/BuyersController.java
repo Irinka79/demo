@@ -1,8 +1,8 @@
 package com.example.demo.contreller;
 
 import com.example.demo.model.Buyers;
-import com.example.demo.repository.ShopRepository;
 import com.example.demo.repository.BuyersRepository;
+import com.example.demo.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +14,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-public class BuyersContreller {
+public class BuyersController {
     @Autowired
     BuyersRepository buyersRepository;
     @Autowired
     ShopRepository shopRepository;
 
+
     @GetMapping("/client")
     public String findAll(Model model) {
-        List<Buyers> buyerses = buyersRepository.findAll();
-        model.addAttribute("buers", buyerses);
+
+        List<Buyers> client = buyersRepository.findAll();
+        model.addAttribute("client", client);
         return "client";
     }
 

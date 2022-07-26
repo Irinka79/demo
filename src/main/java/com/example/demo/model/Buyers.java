@@ -12,7 +12,7 @@ public class Buyers {
     @ManyToOne
     private Shop shop;
 
-    public Buyers(String s) {
+    public Buyers () {
     }
 
     public Buyers(String client, int phoneNumber, Shop shop) {
@@ -20,6 +20,7 @@ public class Buyers {
         this.phoneNumber = phoneNumber;
         this.shop = shop;
     }
+
 
     public int getId() {
         return id;

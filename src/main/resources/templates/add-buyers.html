@@ -15,7 +15,7 @@
         Товар
         <select name="shop">
             <th:block th:each="shop : ${shopes}">
-                <option th:value="${shop.id}" th:text="${shop.client}"/>
+                <option th:value="${shop.id}" th:text="${shop.product}"/>
             </th:block>
         </select>
         <br>
